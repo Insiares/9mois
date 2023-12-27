@@ -44,7 +44,7 @@ if st.button("Rechercher"):
             results = response.json().get("results", [])
             for result in results:
                 if result['score'] > 0:
-                    st.write(f"Table: {result['table']}, Score: {result['score']}")
+                    st.write(f"Table: {result['table']}, Score: {result['score']}, row_id: {result['document_id']}")
                     st.write(result['document'])
                     st.write("---")
         else:

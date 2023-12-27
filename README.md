@@ -9,9 +9,13 @@ docker run -it --rm \
   -v $(pwd)/meili_data:/meili_data \
   getmeili/meilisearch:v1.5
 
-# -- 
-# test unitaire
-# optimiser le tfidf - fuzzy search (flexibilité sur l'orthographe) - stop words - le vecteur all tables
-# proposer une api d'update de l'index (ou autre route)
-# merge le get de l'id documents
 # ---
+# test unitaire
+# optimiser le tfidf - fuzzy search (flexibilité sur l'orthographe) - stop words - le vecteur all tables (COMPLIQUE)
+# proposer une api d'update de l'index (ou autre route)
+# merge le get de l'id documents DONE
+# ---
+
+table origin 
+row id 
+content
