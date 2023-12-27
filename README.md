@@ -11,9 +11,11 @@ docker run -it --rm \
 
 # ---
 # test unitaire
-# optimiser le tfidf - fuzzy search (flexibilité sur l'orthographe) - stop words - le vecteur all tables (COMPLIQUE)
+# optimiser le tfidf - fuzzy search DONE - stop words - le vecteur all tables (COMPLIQUE)
 # proposer une api d'update de l'index (ou autre route)
 # merge le get de l'id documents DONE
+# Documentation API
+# Solution de deploiement
 # ---
 
 table origin 

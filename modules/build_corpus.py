@@ -26,7 +26,7 @@ def tokenizer_stemmer(text):
 
 def init_api():
     engine, metadata = connect_db()
-    stop_words = load_stop_words("stop_words_french.json") #TODO : clarify path
+    stop_words = load_stop_words("./data/stop_words_french.json")
     tables = ['articles', 'food', 'questions', 'recipes']
     data = {table: process_table(engine, metadata, table) for table in tables}
     # Préparation du vectorisateur TF-IDF
