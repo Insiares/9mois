@@ -12,7 +12,6 @@ def database_connection():
     engine, metadata = connect_db()
     yield engine, metadata
 
-
 def test_connect_db(database_connection):
     engine, metadata = database_connection
 

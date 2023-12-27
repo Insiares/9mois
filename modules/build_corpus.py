@@ -6,7 +6,8 @@ import numpy as np
 from modules.db import process_table, connect_db
 from nltk.stem.snowball import SnowballStemmer
 from nltk.tokenize import word_tokenize
-
+from nltk import download
+download('punkt')
 
 # Fonction pour concaténer les valeurs textuelles de toutes les colonnes
 def concatenate_row_values(row):
