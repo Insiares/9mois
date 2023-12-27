@@ -1,6 +1,7 @@
 import pytest
-from modules.build_corpus import init_api, concatenate_row_values, load_stop_words
-from modules.search import search, load_corpus, load_vect, get_document_id
+from modules.build_corpus import init_api, concatenate_row_values
+from modules.build_corpus import load_stop_words
+from modules.search import search, load_corpus, load_vect
 from modules.db import process_table, connect_db
 import os
 import requests
