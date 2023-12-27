@@ -74,7 +74,7 @@ def search_api():
 
     try:
         if table_choices != 'Toutes':
-            table_choices = table_choices.split(',')  # Sépare les noms de tables si plusieurs sont fournis
+            table_choices = table_choices.split(',')  # Sépare les noms de tables si plusieurs sont fournis--
             all_scores = []
             for table_choice in table_choices:
                 if table_choice in tables:
