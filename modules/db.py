@@ -7,7 +7,7 @@ def connect_db():
     return engine, metadata
 
 
-def process_table(engine, metadata,table_name):
+def process_table(engine, metadata, table_name):
     table = Table(table_name, metadata, autoload_with=engine)
     with engine.connect() as connection:
         result_set = connection.execute(table.select()).fetchall()
