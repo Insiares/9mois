@@ -28,7 +28,7 @@ jobs:
 
     - name: Run tests
       run: |
-        python -m unittest discover tests
+        python -m pytest ./tests/conftest.py
 
     - name: Run linter (exemple avec flake8)
       run: |

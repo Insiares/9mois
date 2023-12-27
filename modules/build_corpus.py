@@ -1,12 +1,9 @@
 import json
-from sqlalchemy import create_engine, MetaData, Table
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
 import joblib
 import os
 import numpy as np
 from modules.db import process_table, connect_db
-import nltk
 from nltk.stem.snowball import SnowballStemmer
 from nltk.tokenize import word_tokenize
 
@@ -36,7 +33,8 @@ def init_api():
     # Préparation du vectorisateur TF-IDF
 
     vectorizers = {
-        table: TfidfVectorizer(tokenizer=tokenizer_stemmer, stop_words=stop_words)
+        table: TfidfVectorizer(tokenizer=tokenizer_stemmer, 
+                               stop_words=stop_words)
         for table in tables
     }
 

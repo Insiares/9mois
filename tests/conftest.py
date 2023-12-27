@@ -6,17 +6,6 @@ from modules.db import process_table, connect_db
 import os
 import requests
 
-"""function to test
-- concat rows - ok
-- process table - ok 
-- load stop words - ok
-- ini api - ok 
-- load_vect - ok 
-- load_corpus - ok 
-- search - ok
-- api call-  ok
-- get document id - non merci ça ira"""
-
 
 @pytest.fixture
 def database_connection():
