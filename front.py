@@ -13,7 +13,7 @@ st.set_page_config(
 css = """
 <style>
     .stApp { background-color: #FFC595 !important; }
-    .stApp, .stApp .css-1d391kg, .stApp .css-145kmo2 { color: #000000 !important; }  /* Couleur du texte noir */
+    .stApp, .stApp .css-1d391kg, .stApp .css-145kmo2 { color: #000000 !important; }
 </style>
 """
 st.markdown(css, unsafe_allow_html=True)
@@ -29,7 +29,7 @@ with col2:
 # Champs de recherche
 query = st.text_input(
     "Entrez votre requête de recherche :",
-    placeholder="Si vous n'avez aucun résultat pertinent, assurez-vous de l'orthographie de votre recherche, ou contactez un administrateur :)",
+    placeholder = '',
 )
 # Cases à cocher pour les tables
 table_choices = []
@@ -56,7 +56,9 @@ if st.button("Rechercher"):
             for result in results:
                 if result["score"] > 0:
                     st.write(
-                        f"Table: {result['table']}, Score: {result['score']}, row_id: {result['document_id']}"
+                        f"Table: {result['table']}, 
+                        Score: {result['score']}, 
+                        row_id: {result['document_id']}"
                     )
                     st.write(result["document"])
                     st.write("---")

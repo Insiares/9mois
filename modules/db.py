@@ -2,7 +2,8 @@ from sqlalchemy import create_engine, MetaData, Table
 
 
 def connect_db():
-    engine = create_engine("mysql+pymysql://root:root@9mois.ownedge.fr:3306/9mois")
+    url = "mysql+pymysql://root:root@9mois.ownedge.fr:3306/9mois"
+    engine = create_engine(url)
     metadata = MetaData()
     return engine, metadata
 

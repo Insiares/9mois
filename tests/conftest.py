@@ -4,13 +4,13 @@ from modules.build_corpus import load_stop_words
 from modules.search import search, load_corpus, load_vect
 from modules.db import process_table, connect_db
 import os
-import requests
 
 
 @pytest.fixture
 def database_connection():
     engine, metadata = connect_db()
     yield engine, metadata
+
 
 def test_connect_db(database_connection):
     engine, metadata = database_connection
@@ -111,4 +111,3 @@ def test_search(recherche):
             "1207",
         ),
     )
-

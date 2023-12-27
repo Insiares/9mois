@@ -2,7 +2,6 @@ from flask import Flask, request, jsonify
 from modules.build_corpus import init_api, concatenate_row_values
 from modules.search import search, load_corpus, load_vect, get_document_id
 
-
 app = Flask(__name__)
 
 data = init_api()
@@ -27,11 +26,7 @@ def search_api():
         all_scores = []
         for table_choice in table_choices:
             if table_choice in tables:
-                table_results = search(query, 
-                                       data, 
-                                       corpus, 
-                                       vectorizers, 
-                                       table_choice)
+                table_results = search(query, data, corpus, vectorizers, table_choice)
                 for score, row in table_results:
                     doc_id = get_document_id(row)
                     all_scores.append((score, row, table_choice, doc_id))
@@ -48,9 +43,7 @@ def search_api():
         ]
 
         return jsonify(
-            {"query": query, 
-             "table": table_choices, 
-             "results": formatted_results}
+            {"query": query, "table": table_choices, "results": formatted_results}
         )
     except Exception as e:
         return jsonify({"error": str(e)}), 500

@@ -7,7 +7,9 @@ from modules.db import process_table, connect_db
 from nltk.stem.snowball import SnowballStemmer
 from nltk.tokenize import word_tokenize
 from nltk import download
-download('punkt')
+
+download("punkt")
+
 
 # Fonction pour concaténer les valeurs textuelles de toutes les colonnes
 def concatenate_row_values(row):
@@ -34,8 +36,8 @@ def init_api():
     # Préparation du vectorisateur TF-IDF
 
     vectorizers = {
-        table: TfidfVectorizer(tokenizer=tokenizer_stemmer, 
-                               stop_words=stop_words)
+        table : TfidfVectorizer(tokenizer=tokenizer_stemmer, 
+                                stop_words=stop_words)
         for table in tables
     }
 
