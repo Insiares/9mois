@@ -12,8 +12,8 @@ st.set_page_config(
 # Appliquer le CSS pour la couleur de fond et la couleur du texte
 css = """
 <style>
-    .stApp { background-color: #FFC595 !important; }
-    .stApp, .stApp .css-1d391kg, .stApp .css-145kmo2 { color: #000000 !important; }
+.stApp {background-color: #FFC595 !important;}
+.stApp, .stApp .css-1d391kg, .stApp .css-145kmo2 {color: #000000 !important;}
 </style>
 """
 st.markdown(css, unsafe_allow_html=True)
@@ -27,10 +27,7 @@ with col2:
     st.image("9mois.jpg", use_column_width=True)
 
 # Champs de recherche
-query = st.text_input(
-    "Entrez votre requête de recherche :",
-    placeholder = '',
-)
+query = st.text_input("Entrez votre requête de recherche :")
 # Cases à cocher pour les tables
 table_choices = []
 if st.checkbox("Articles", value=True):

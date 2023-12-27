@@ -36,8 +36,10 @@ def init_api():
     # Préparation du vectorisateur TF-IDF
 
     vectorizers = {
-        table: TfidfVectorizer(tokenizer=tokenizer_stemmer,
-                                stop_words=stop_words)
+        table: TfidfVectorizer(
+            tokenizer=tokenizer_stemmer,
+            stop_words=stop_words
+            )
         for table in tables
     }
 
