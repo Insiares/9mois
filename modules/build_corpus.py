@@ -48,7 +48,7 @@ def init_api():
         vectorizers[table].fit_transform(docs)
 
     # Save the vectorizers
-    if os.path.exists('./ML/') == False:
+    if not os.path.exists('./ML/'):
         os.makedirs('./ML/')
 
     save_files_path = "./ML/"

@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine, MetaData, Table
-import os
+# import os
 
-url = "mysql+pymysql://root:root_0.017BTC_root@9mois.ownedge.fr:3306/9mois"
+url = ""
 
 
 def connect_db():
