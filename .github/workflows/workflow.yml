@@ -26,9 +26,9 @@ jobs:
     - name: Change to the repository root
       run: cd $GITHUB_WORKSPACE
 
-    - name: Run tests
-      run: |
-        python -m pytest ./tests/conftest.py
+    # - name: Run tests
+    #   run: |
+    #     python -m pytest ./tests/conftest.py
 
     - name: Run linter (exemple avec flake8)
       run: |

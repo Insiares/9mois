@@ -24,7 +24,7 @@ FLASK_API_URL = "http://192.168.1.12:5000/search"
 # Centrer l'image
 col1, col2, col3 = st.columns([3, 1, 3])
 with col2:
-    st.image("9mois.jpg", use_column_width=True)
+    st.image("./static/img/9mois.jpg", use_column_width=True)
 
 # Champs de recherche
 query = st.text_input("Entrez votre requête de recherche :")
