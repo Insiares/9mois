@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine, MetaData, Table
-# import os
+import os
 
-url = ""
+url = os.environ.get('url')
 
 
 def connect_db():
