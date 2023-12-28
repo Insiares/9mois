@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 from modules.build_corpus import init_api, concatenate_row_values
 from modules.search import search, load_corpus, load_vect, get_document_id
+from modules.build_corpus import init_api
 
 app = Flask(__name__)
 
@@ -10,7 +11,17 @@ vectorizers = load_vect()
 tables = ["articles", "food", "questions", "recipes"]
 
 
-# # Définition de l'endpoint de recherche v2
+# Définition de l'endpoint d'update
+@app.route("/update")
+def update():
+    try:
+        data = init_api()
+        return "Update index articles, food, questions, recipes complete!"
+    except Exception as e:
+        return f"Error: {str(e)}", 500
+
+
+# Définition de l'endpoint de recherche v2
 @app.route("/search", methods=["GET"])
 def search_api():
     query = request.args.get("query", "")
@@ -56,4 +67,4 @@ def search_api():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
