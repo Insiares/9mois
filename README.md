@@ -84,7 +84,32 @@ This is an example of how to list things you need to use the software and how to
   ```
 
 ### Installation
-set MY_URL " " 
+
+### Docker Compose
+
+Windows Terminal :
+
+```
+set url=mysql+pymysql://<login>:<password>@<ip_or_hostname_or_fqdn>:<port>/<db_name>
+```
+```
+docker-compose up -d --build
+```
+
+Linux :
+
+```
+docker-compose up -d --build \
+-e url=mysql+pymysql://<login>:<password>@<ip_or_hostname_or_fqdn>:<port>/<db_name>
+```
+
+### Docker
+
+```
+docker run -d -e url=mysql+pymysql://<login>:<password>@<ip_or_hostname_or_fqdn>:<port>/<db_name> -p 5000:5000 ownedge/9mois
+```
+
+
 1. Get a free API Key at [https://example.com](https://example.com)
 2. Clone the repo
    ```sh
