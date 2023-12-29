@@ -128,6 +128,10 @@ L'API de recherche offre deux points de terminaisons :
             ]
   }
   ```
+
+  Exemple d'appel API en locale : 
+  `
+http://localhost:5000/search?query=quoi%20manger%20pour%20avoir%20du%20fer&Table=articles`
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 

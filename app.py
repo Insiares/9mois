@@ -26,7 +26,8 @@ def update():
 @app.route("/search", methods=["GET"])
 def search_api():
     query = request.args.get("query", "")
-    table_choices = request.args.get("table", tables)
+    table_choices = request.args.get("table",
+                                     "articles,food,questions,recipes")
 
     if not query:
         return jsonify({"error": "Aucune requête fournie."}), 400
