@@ -58,12 +58,10 @@ Une solution de recherche de documents par calcul de similarité `fait maison`.
 ### Built With
 
 * [![Python][Python-shield]][Python-url]
-* [![Streamlit][Streamlit-shield]][Streamlit-url]
 * ![sk-learn][scikit-shield]
 * ![numpy][NumPy]
 * [![flask][flask-shield]][flask-url]
 * ![mysql][mysql-shield]
-* [![OpenAI][GPT-shield]][GPT-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -71,19 +69,6 @@ Une solution de recherche de documents par calcul de similarité `fait maison`.
 
 <!-- GETTING STARTED -->
 ## Installation
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
-
-### Installation
 
 ### Docker Compose
 
@@ -110,45 +95,39 @@ docker run -d -e url=mysql+pymysql://<login>:<password>@<ip_or_hostname_or_fqdn>
 ```
 
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/Insiares/9mois.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
 <!-- USAGE EXAMPLES -->
-## Usage
+## Usage API
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+L'API de recherche est connectée à la base de données de l'application et va indéxer son contenu au lancement de l'API.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+L'API de recherche offre deux points de terminaisons : 
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+* `/update` permet de mettre à jour l'indexage lorsque le contenu de la base de données à été modifiée, sans devoir relancer le service.
 
+* `/search` est la route principale permettant d'obtenir la réponse de la recherche. la méthode prends deux arguments : 
+  * `query` : contenu de la recherche
+  * `table_choices` (facultatif): Sélection des tables dans lesquels effectuer la recherche. S'il -n'est pas fourni, la recherche sera effectuée sur toutes les tables par défaut.
 
-
-<!-- ROADMAP -->
-## Roadmap
-
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
-
-See the [open issues](https://github.com/Insiares/9mois/issues) for a full list of proposed features (and known issues).
-
+  Le résultat de la recherche est un document sérialisé dont la structure de données est : 
+  ```json
+  {
+  "query": query (str),
+  "table": table_choices (str),
+  "results": [
+    {
+                "score": score de similarité (float),
+                "document_id": id du document au sein           
+                              de la base de données (int),
+                "document": contenu du document (str),
+                "table": nom de la table contenant le document (str)
+    }
+            ]
+  }
+  ```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
