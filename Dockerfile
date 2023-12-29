@@ -14,7 +14,7 @@ RUN pip install -r requirements.txt
 COPY app.py .
 COPY modules/ /home/user/modules/
 COPY data/stop_words_french.json /home/user/data/stop_words_french.json
-COPY ML/ /home/user/ML/
+
 
 EXPOSE 5000
 
