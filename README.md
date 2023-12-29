@@ -23,7 +23,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/Insiares/9mois">
-    <img src="./9mois.jpg" alt="Logo" width="100" height="80">
+    <img src="./static/img/9mois.jpg" alt="Logo" width="100" height="80">
   </a>
 
 <h3 align="center">Recherche full text pour l'appli 9 mois à croquer</h3>
