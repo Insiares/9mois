@@ -21,6 +21,7 @@ def load_stop_words(path):
         return json.load(file)
 
 
+# Fonction de preprocessing du text maison avec stemmer
 def tokenizer_stemmer(text):
     stemmer = SnowballStemmer("french")
     tokens = word_tokenize(text, language="french")
@@ -28,7 +29,7 @@ def tokenizer_stemmer(text):
     return stemmed_tokens
 
 
-def init_api():
+def init_api():  # Fonction fourre-tout pour démarrer le service en un move
     engine, metadata = connect_db()
     stop_words = load_stop_words("./data/stop_words_french.json")
     tables = ["articles", "food", "questions", "recipes"]
@@ -56,6 +57,7 @@ def init_api():
         save_path = os.path.join(save_files_path, str(key + ".sav"))
         joblib.dump(vect, save_path)
 
+    # Save the corpus
     corpus = {}
     for table in tables:
         documents = data[table]
