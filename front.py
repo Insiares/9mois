@@ -19,7 +19,7 @@ css = """
 st.markdown(css, unsafe_allow_html=True)
 
 # URL de l'API Flask (ajustez selon vos besoins)
-FLASK_API_URL = "http://192.168.1.12:5000/search"
+FLASK_API_URL = "http://localhost:5000/search"
 
 # Centrer l'image
 col1, col2, col3 = st.columns([3, 1, 3])

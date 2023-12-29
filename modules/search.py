@@ -2,7 +2,7 @@ import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 import joblib
 import os
-from autocorrect import Speller
+# from autocorrect import Speller
 
 
 def load_vect():
@@ -33,9 +33,9 @@ def get_document_id(doc):
 def search(query, data, corpus, vectorizers, table_name):
     documents = data[table_name]
     vectorizer = vectorizers[table_name]
-    spell = Speller('fr')
-    query_corr = spell(query)
-    query_vec = vectorizer.transform([query_corr])
+    # spell = Speller('fr')
+    # query_corr = spell(query)
+    query_vec = vectorizer.transform([query])
     scores = cosine_similarity(query_vec, corpus[table_name]).flatten()
     ranked_scores = sorted(
         [(score, row) for score, row in zip(scores, documents)],
